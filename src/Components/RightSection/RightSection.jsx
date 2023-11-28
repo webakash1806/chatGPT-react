@@ -6,12 +6,12 @@ import Head from '../Head'
 
 const RightSection = () => {
     return (
-        <>
+        <div className='flex flex-col text-white'>
             <Head />
             <Main />
             <SearchBox />
             <Footer />
-        </>
+        </div>
     )
 }
 
