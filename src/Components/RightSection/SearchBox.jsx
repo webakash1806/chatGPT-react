@@ -3,7 +3,7 @@ import React from 'react'
 const SearchBox = () => {
     return (
         <div>
-            search
+            <textarea name="" id="" cols="50" rows="5"></textarea>
         </div>
     )
 }
