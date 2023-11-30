@@ -10,14 +10,16 @@ const SearchBox = () => {
     const [answer, setAnswer] = useState([])
     const handleSend = async () => {
         const res = await sendMsg(que)
-        setAnswer([...answer, { text: que, isAI: true }, { text: res, isAI: false }])
+        setAnswer([...answer, { text: que, isAI: true, fill: true }, { text: res, isAI: false, fill: true }])
         console.log(res)
         console.log(answer)
+        console.log(answer[0].isAI)
     }
 
     return (
         <div>
-            {answer === '' ? <Main /> : <div>{
+
+            {answer == [] ? <Main /> : <div>{
                 answer.map((response, i) => {
                     return <Response key={i + 1} text={response.text} isAI={response.isAI} />
                 })

@@ -1,5 +1,5 @@
 import { OpenAI } from 'openai'
-const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true })
+const openai = new OpenAI({ apiKey: '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', dangerouslyAllowBrowser: true })
 
 export async function sendMsg(message) {
 
