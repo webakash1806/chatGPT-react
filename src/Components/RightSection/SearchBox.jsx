@@ -8,7 +8,9 @@ import Response from '../Response/Response'
 const SearchBox = () => {
     const [que, setQue] = useState()
     const [answer, setAnswer] = useState([])
+
     console.log(answer)
+
     const handleSend = async () => {
         const res = await sendMsg(que)
         setAnswer([...answer, { text: que, isAI: true, fill: true }, { text: res, isAI: false, fill: true }])
@@ -17,7 +19,6 @@ const SearchBox = () => {
 
     return (
         <div className='relative'>
-
             <div className=' max-h-[70vh] overflow-y-scroll scrollbar-thumb-[#000000] scrollbar-track-grey-800 scrollbar-thin scrollbar'>
                 {answer.length === 0 ? <Main /> : <>{
                     answer.map((response, i) => {
