@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
-import { sendMsg } from '../../Hooks/response'
+import axios from 'axios'
 import Main from './Main'
 import Response from '../Response/Response'
 
@@ -13,10 +13,22 @@ const SearchBox = () => {
     // console.log(answer)
 
     const handleSend = async () => {
-        setAnswer([...answer, { text: que, isAI: true }, { text: '...', isAI: false }])
-        const res = await sendMsg(que)
-        setAnswer([...answer, { text: que, isAI: true }, { text: res, isAI: false }])
-        console.log(res)
+
+
+
+
+        axios.post('https://space-ai-cilq.onrender.com/ask', { question: que })
+            .then(response => {
+                setAnswer([...answer, { text: que, isAI: true }, { text: '...', isAI: false }])
+                setQue('')
+                const res = response.data
+                setAnswer([...answer, { text: que, isAI: true }, { text: res, isAI: false }])
+                setQue('')
+                console.log('Response from backend:', response.data);
+            })
+            .catch(error => {
+                console.error('Error sending data to backend:', error);
+            });
     }
 
     const handleEnter = async (e) => {
@@ -37,7 +49,7 @@ const SearchBox = () => {
                 }</>}
                 <div ref={msgEnd} />
             </div>
-            <textarea onKeyDown={handleEnter} onChange={(e) => setQue(e.target.value)}
+            <textarea onKeyDown={handleEnter} value={que} onChange={(e) => setQue(e.target.value)}
                 className='text-white bg-[#222229] mt-6 w-[95vw] sm:w-[90vw] md:min-w-[48rem] md:max-w-[48rem] lg:min-w-[46rem] lg:max-w-[46rem] rounded-lg resize-none border border-slate-600  shadow-sm shadow-[#6365f1e4] outline-none p-[5px_10px]'
                 name="" id="" rows="2"
                 placeholder='Search Something...'></textarea>
