@@ -16,15 +16,14 @@ const SearchBox = () => {
 
 
 
-
+        setAnswer([...answer, { text: que, isAI: true }, { text: '...', isAI: false }])
+        setQue('')
         axios.post('https://space-ai-cilq.onrender.com/ask', { question: que })
             .then(response => {
-                setAnswer([...answer, { text: que, isAI: true }, { text: '...', isAI: false }])
-                setQue('')
+
                 const res = response.data
                 setAnswer([...answer, { text: que, isAI: true }, { text: res, isAI: false }])
                 setQue('')
-                console.log('Response from backend:', response.data);
             })
             .catch(error => {
                 console.error('Error sending data to backend:', error);
