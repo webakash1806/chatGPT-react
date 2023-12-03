@@ -4,6 +4,8 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios'
 import Main from './Main'
 import Response from '../Response/Response'
+import Loader from 'react-dots-loader'
+import 'react-dots-loader/index.css'
 
 const SearchBox = () => {
     const [que, setQue] = useState()
@@ -14,9 +16,8 @@ const SearchBox = () => {
 
     const handleSend = async () => {
 
-
-
-        setAnswer([...answer, { text: que, isAI: true }, { text: '...', isAI: false }])
+        <Loader />
+        setAnswer([...answer, { text: que, isAI: true }, { text: <Loader color='white' size='5.5px' distance='7px' />, isAI: false }])
         setQue('')
         axios.post('https://space-ai-cilq.onrender.com/ask', { question: que })
             .then(response => {
@@ -41,6 +42,7 @@ const SearchBox = () => {
     return (
         <div className='relative'>
             <div className=' max-h-[70vh] overflow-y-scroll scrollbar-thumb-[#000000] scrollbar-track-grey-800 scrollbar-thin scrollbar'>
+                {/* <Loader color='white' size='6px' distance='8px' /> */}
                 {answer.length === 0 ? <Main /> : <>{
                     answer.map((response, i) => {
                         return <Response key={i + 1} text={response.text} isAI={response.isAI} />
