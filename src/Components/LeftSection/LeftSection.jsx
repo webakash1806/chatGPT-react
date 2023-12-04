@@ -3,7 +3,7 @@ import Header from './Header'
 import History from './History'
 import NewBtn from './NewBtn'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faXmark, faMicrophone } from '@fortawesome/free-solid-svg-icons'
 
 
 const LeftSection = () => {
