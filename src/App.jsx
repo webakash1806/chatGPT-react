@@ -10,8 +10,8 @@ const App = () => {
     // </div>
 
     <Routes>
-      <Route exact path="chatGPT-react" element={<Home />} />
-      <Route path='chatGPT-react/image' element={<Image />} />
+      <Route path="/chatGPT-react" element={<Home />} />
+      <Route path='/chatGPT-react/image' element={<Image />} />
     </Routes>
   )
 }
