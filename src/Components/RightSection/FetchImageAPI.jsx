@@ -42,7 +42,7 @@ const FetchImageAPI = () => {
 
     return (
         <div className='relative'>
-            <div className='max-h-[85vh] overflow-y-scroll scrollbar-thumb-[#000000] scrollbar-track-grey-800 scrollbar-thin scrollbar'>
+            <div className='max-h-[77.5vh] pt-[1rem] overflow-y-scroll scrollbar-thumb-[#000000] scrollbar-track-grey-800 scrollbar-thin scrollbar'>
                 {/* <Loader color='white' size='6px' distance='8px' /> */}
                 {answer.length === 0 ? <Main middHead={"How can i help you today"} /> : <>{
                     answer.map((response, i) => {

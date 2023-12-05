@@ -15,7 +15,7 @@ const LeftSection = () => {
                 onClick={() => setActive(true)}
                 className='text-white z-20 absolute cursor-pointer left-[13px] lg:hidden top-[10px] border border-slate-500 shadow-sm shadow-[#808080] w-4 h-4 p-2 rounded-md'
                 icon={faBars} />
-            <div onClick={() => setActive(false)} className={`${active ? 'left-0' : 'left-[-150rem]'} z-30 absolute top-0  w-[100vw] h-[100vh] bg-[#050517b9] blur-[2rem]`}></div>
+            <div onClick={() => setActive(false)} className={`${active ? 'left-0' : 'left-[-150rem]'} z-30 absolute top-0 lg:hidden  w-[100vw] h-[100vh] bg-[#050517b9] blur-[2rem]`}></div>
 
             <div className={`${active ? 'left-0 relative' : 'left-[-35rem] absolute'} lg:static z-30 duration-300 top-0 border border-black bg-[#000000] w-[17.65rem] p-3 pb-6 h-[100vh] flex flex-col justify-between items-center gap-4`}>
                 <FontAwesomeIcon
