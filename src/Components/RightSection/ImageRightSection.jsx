@@ -1,14 +1,15 @@
 import React from 'react'
-import FetchChatAPI from './FetchChatAPI'
+// import Chat from './FetchChatAPI'
+import FetchImageAPI from './FetchImageAPI'
 import Footer from '../Footer'
 import Head from '../Head'
 
-const RightSection = () => {
+const ImageRightSection = () => {
     return (
         <div className='flex flex-col items-center p-[16px_0] justify-between gap-2 h-[100vh] w-full text-white'>
-            <Head headMain={"Chat"} />
+            <Head headMain={"Image"} />
             <div>
-                <FetchChatAPI />
+                <FetchImageAPI />
                 <Footer />
             </div>
         </div>
@@ -16,4 +17,4 @@ const RightSection = () => {
 }
 
 
-export default RightSection
+export default ImageRightSection
