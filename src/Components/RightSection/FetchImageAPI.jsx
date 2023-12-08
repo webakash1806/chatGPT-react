@@ -4,7 +4,8 @@ import SearchCont from './SearchCont'
 import axios from 'axios'
 import Main from './Main'
 import ImageResponse from '../Response/ImageResponse'
-
+import Loader from 'react-dots-loader'
+import 'react-dots-loader/index.css'
 
 const FetchImageAPI = () => {
     const [que, setQue] = useState()
@@ -15,7 +16,7 @@ const FetchImageAPI = () => {
 
     const handleSend = async () => {
 
-        setAnswer([...answer, { text: que, url: "Loading", isAI: true }, { text: "loading", url: "Loading", isAI: false }])
+        setAnswer([...answer, { text: que, url: "Loading", isAI: true }, { text: <Loader color='white' size='5.5px' distance='7px' />, url: "Loading", isAI: false }])
         setQue('')
         axios.post('http://localhost:3000/image', { imageQuery: que })
             .then(response => {
