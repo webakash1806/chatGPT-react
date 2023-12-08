@@ -5,8 +5,8 @@ import { faHouse, faGear } from '@fortawesome/free-solid-svg-icons'
 
 const Header = () => {
 
-    const headerList = [{ id: 1, name: "Home", icon: <FontAwesomeIcon icon={faHouse} />, link: "" },
-    { id: 2, name: "Home", icon: "", link: "" },
+    const headerList = [{ id: 1, name: "Home", icon: <FontAwesomeIcon icon={faHouse} />, link: "/chatGPT-react" },
+    { id: 2, name: "Image", icon: "", link: "/chatGPT-react/image" },
     { id: 3, name: "Settings", icon: <FontAwesomeIcon icon={faGear} />, link: "" }]
     return (
         <div className='text-white 
