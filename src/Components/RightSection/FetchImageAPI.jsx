@@ -45,7 +45,7 @@ const FetchImageAPI = () => {
         <div className='relative'>
             <div className='max-h-[77.5vh] pt-[1rem] overflow-y-scroll scrollbar-thumb-[#000000] scrollbar-track-grey-800 scrollbar-thin scrollbar'>
                 {/* <Loader color='white' size='6px' distance='8px' /> */}
-                {answer.length === 0 ? <Main middHead={"How can i help you today"} /> : <>{
+                {answer.length === 0 ? <Main middHead={"Are you here to generate Image"} /> : <>{
                     answer.map((response, i) => {
                         return <ImageResponse key={i + 1} url={response.url} text={response.text} isAI={response.isAI} />
                     })
